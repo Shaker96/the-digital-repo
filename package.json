@@ -1,0 +1,43 @@
+{
+  "name": "digital-repo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@portabletext/react": "^3.0.11",
+    "@react-pdf-viewer/thumbnail": "^3.12.0",
+    "@vercel/postgres": "^0.5.1",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.3.1",
+    "moment": "^2.29.4",
+    "next": "14.0.1",
+    "next-auth": "^4.24.4",
+    "next-sanity": "^5.5.10",
+    "nodemailer": "^6.9.7",
+    "pdfjs": "^2.5.2",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^4.12.0",
+    "react-pdf": "^7.5.1",
+    "react-select": "^5.8.0",
+    "server-only-context": "^0.0.4",
+    "vercel": "^32.5.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.1",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.1",
+    "postcss": "^8",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}
