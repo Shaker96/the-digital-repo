@@ -36,9 +36,13 @@ export type user = {
   id: number,
   firstname: string,
   lastname: string,
-  subscription: string,
-  renewal: Date,
-  downloads: number
+  expiryDate: string,
+  downloads: number,
+  uploads: number,
+  totalDownloads: number,
+  totalUploads: number,
+  subName: string,
+  isSub: boolean
 }
 
 export type chatQuestion = {
@@ -49,23 +53,31 @@ export type chatQuestion = {
 
 export const subscriptions = [
   {
-    id: 1,
     name: 'BASIC MONTHLY',
-    price: 3.99
+    price: 3.99,
+    days_of_benefit: 30,
+    uploads: 10,
+    downloads: 50,
   },
   {
-    id: 2,
     name: 'BASIC ANNUAL',
-    price: 39.99
+    price: 39.99,
+    days_of_benefit: 365,
+    uploads: 150,
+    downloads: 625,
   },
   {
-    id: 3,
     name: 'PREMIUM MONTHLY',
-    price: 7.99
+    price: 7.99,
+    days_of_benefit: 30,
+    uploads: 0,
+    downloads: 0,
   },
   {
-    id: 4,
     name: 'PREMIUM ANNUAL',
-    price: 79.99
+    price: 79.99,
+    days_of_benefit: 365,
+    uploads: 0,
+    downloads: 0,
   }
 ]

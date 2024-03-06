@@ -10,11 +10,10 @@ const config: Config = {
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'search-cover': "url('/cover.jpg')",
-        'profile-cover': "url('/profile-cover.jpg')",
-        'robot': "url('/robot.jpg')"
+        'robot': "url('/robot.jpg')",
+        // 'profile-cover': "url('/profile-cover.jpg')",
       },
       colors: {
         blizzard: '#ABE8E9',

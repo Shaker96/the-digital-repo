@@ -7,9 +7,9 @@ export async function POST(request: Request) {
     // validate email and password
 
     const response = await sql`
-      UPDATE users
+      UPDATE subscribed_users
       SET downloads = downloads + 1
-      WHERE id = ${id}
+      WHERE user_id = ${id}
     `;
     
   } catch (error) {
@@ -26,8 +26,10 @@ export async function GET(request: Request) {
     // validate email and password
     
     const response = await sql`
-      SELECT downloads, subscription, renewal FROM users
-      WHERE id = ${id}
+      SELECT su.downloads, su.uploads, s.name, s.downloads as total_downloads, s.uploads as total_uploads 
+      FROM subscribed_users su
+      INNER JOIN subscriptions s ON s.id = su.subscription_id
+      WHERE su.user_id = ${id}
     `;
 
     // console.log('RES', response.rows[0]);

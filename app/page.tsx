@@ -133,10 +133,10 @@ export default function Home() {
   }
 
   return (
-    <main className="grow flex flex-col items-center justify-start pt-36 md:pt-20 pb-10 bg-sky-50">
+    <main className="grow flex flex-col items-center justify-start pt-28 md:pt-20 pb-10 bg-sky-50">
       {/* <Modal /> */}
-      <div className={`relative flex items-center justify-between bg-search-cover w-full p-10 ${showSearch ? 'h-28' : 'h-auto'}`}>
-        <div className={`flex flex-col w-1/2 ${showSearch ? 'mx-auto' : ''}`}>
+      <div className={`relative flex items-center justify-between bg-search-cover bg-cover w-full p-10 ${showSearch ? 'h-28' : 'h-auto'}`}>
+        <div className={`flex flex-col md:w-1/2 ${showSearch ? 'mx-auto' : ''}`}>
           {!showSearch && <h1 className='text-white text-3xl'>Open knowledge. Bright Future.</h1>}
           {!showSearch && <p className='text-white pt-6 text-md text-justify'>Welcome to The Digital Repo, built to inform you about state of the art technology. Built using NextJS, tailwind CSS & Sanity, hosted on Vercel.</p>}
           <div className={`flex flex-row items-center justify-between rounded-full border border-navy overflow-hidden w-full bg-white ${showSearch ? '' : 'mt-4'}`}>
@@ -156,7 +156,7 @@ export default function Home() {
         </div>
         {!showSearch && 
           <div 
-            className='mx-auto shadow-[5px_5px_rgba(68,_204,_223,_0.4),_10px_10px_rgba(68,_204,_223,_0.3),_15px_15px_rgba(68,_204,_223,_0.2),_20px_20px_rgba(68,_204,_223,_0.1),_25px_25px_rgba(68,_204,_223,_0.05)]'
+            className='hidden md:block mx-auto shadow-[5px_5px_rgba(68,_204,_223,_0.4),_10px_10px_rgba(68,_204,_223,_0.3),_15px_15px_rgba(68,_204,_223,_0.2),_20px_20px_rgba(68,_204,_223,_0.1),_25px_25px_rgba(68,_204,_223,_0.05)]'
           >
             <Image
               className="rounded-xl"
@@ -171,12 +171,12 @@ export default function Home() {
       <div className='flex w-full items-center pt-10 px-10'>
         <div className='flex flex-col w-full'>
           <h2 className='font-bold mr-auto text-2xl'>
-            {showSearch ? `Busqueda: ${fixedKeyword} (${articles.length} resultados)` : 'Novedades'}
+            {showSearch ? `Search: ${fixedKeyword} (${articles.length} results)` : 'Latest'}
             <div className="border-b border-b-navy"></div>
           </h2>
         </div>
         {showSearch &&
-          <div className="flex items-center cursor-pointer hover:text-gray-500" onClick={clearSearch}>
+          <div className="flex items-center cursor-pointer hover:text-gray-500 whitespace-nowrap" onClick={clearSearch}>
             <MdArrowBack /><span className="pl-2">Go Back</span>
           </div>
         }

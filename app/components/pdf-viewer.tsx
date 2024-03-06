@@ -3,10 +3,11 @@ import React, { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { MdOutlineFileDownload } from "react-icons/md";
+import Link from "next/link";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-export default function PdfViewer({ PDF, singlePage, height, width, canDownload, increaseDownloads, setShowModal }: any) {
+export default function PdfViewer({ PDF, singlePage, height, width, canDownload, increaseDownloads, setShowModal, userId }: any) {
   const [numPages, setNumPages] = useState<number>();
   const [pageNumber, setPageNumber] = useState(1);
   const [renderNavButtons, setRenderNavButtons] = useState<Boolean>(!singlePage);
@@ -42,7 +43,7 @@ export default function PdfViewer({ PDF, singlePage, height, width, canDownload,
               <FaArrowRight />
             </button>
           </div>
-          {canDownload &&
+          {userId && canDownload &&
             <a
               className="flex items-center gap-1 rounded-lg bg-navy hover:bg-cyan-500 text-white p-2 cursor-pointer"
               download href={PDF} target="_blank" onClick={() => increaseDownloads?.()}
@@ -50,7 +51,7 @@ export default function PdfViewer({ PDF, singlePage, height, width, canDownload,
               <span className="text-xl pl-1"><MdOutlineFileDownload /></span>
               <span className="px-2">Download</span>
             </a>}
-          {!canDownload &&
+          {userId && !canDownload &&
             <button
               className="flex items-center gap-1 rounded-lg bg-navy text-white p-2"
               onClick={() => setShowModal(true)}
@@ -58,6 +59,14 @@ export default function PdfViewer({ PDF, singlePage, height, width, canDownload,
               <span className="text-xl pl-1"><MdOutlineFileDownload /></span>
               <span className="px-2">Download</span>
             </button>}
+          {!userId &&
+            <Link
+              href="/register"
+              className="flex items-center gap-1 rounded-lg bg-navy text-white p-2"
+            >
+              <span className="text-xl pl-1"><MdOutlineFileDownload /></span>
+              <span className="px-2">Create free account to download</span>
+            </Link>}
         </div>
       }
       <Document

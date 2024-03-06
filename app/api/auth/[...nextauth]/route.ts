@@ -35,15 +35,20 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials, req) {
 
         const response = await sql`
-        SELECT * FROM users WHERE email=${credentials?.email}`;
+          SELECT u.*, su.*, s.name, s.downloads as total_downloads, s.uploads as total_uploads 
+          FROM users u
+          LEFT JOIN subscribed_users su ON u.id = su.user_id 
+          LEFT JOIN subscriptions s ON su.subscription_id = s.id 
+          WHERE u.email=${credentials?.email}`;
         const user = response.rows[0]
+
+        console.log('next-auth', {response, credentials, user });
 
         const passCorrect = await compare(
           credentials?.password || '',
           user.password
         )
 
-        // console.log('next-auth', { passCorrect, user });
 
         if (passCorrect) {
           return {
@@ -51,9 +56,13 @@ export const authOptions: NextAuthOptions = {
             email: user.email,
             firstname: user?.firstname,
             lastname: user?.lastname,
-            subscription: user?.subscription,
-            renewal: user?.renewal,
-            downloads: user?.downloads
+            expiryDate: user?.expiry_date,
+            downloads: user?.downloads,
+            uploads: user?.uploads,
+            totalDownloads: user?.total_downloads,
+            totalUploads: user?.total_uploads,
+            subName: user?.name,
+            isSub: user?.is_subscribed
           }
         }
 

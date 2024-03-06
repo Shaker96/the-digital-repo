@@ -20,7 +20,7 @@ export default function Modal({ setShowModal, userId }: { setShowModal: Dispatch
       'Check articles', 'Unlimited downloads', 'Unlimited uploads',
     ],
     basic: [
-      'Check articles', 'Up to 50 downloads per month', 'Up to 20 uploads per month',
+      'Check articles', 'Up to 50 downloads per month', 'Up to 10 uploads per month',
     ]
   }
 

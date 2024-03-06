@@ -22,14 +22,15 @@ export default function ArticleList({ articles, title, isHome }: any) {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [showArts, setShowArts] = useState(articles);
+  const itemsPerPage = 3;
 
   useEffect(() => {
-    setTotalPages(Math.ceil(articles.length / 7));
+    setTotalPages(Math.ceil(articles.length / itemsPerPage));
   }, [articles]);
 
   useEffect(() => {
-    const from = 7 * (page - 1);
-    const to = 7 * page;
+    const from = itemsPerPage * (page - 1);
+    const to = itemsPerPage * page;
     setShowArts(articles.slice(from, to))
   }, [page, articles]);
 

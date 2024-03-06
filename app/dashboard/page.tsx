@@ -45,7 +45,7 @@ export default function DashboardPage() {
   const [showModal, setShowModal] = useState(false);
 
   const [sub, setSub] = useState({
-    subscription: 'GRATIS',
+    subscription: 'FREE',
     renewal: '',
   });
 
@@ -343,13 +343,13 @@ export default function DashboardPage() {
   }
 
   const handleUploadButton = () => {
-    if (sub?.subscription.includes('PREMIUM')) {
+    if (user.subName.includes('PREMIUM')) {
       setShowArticleForm(true);
       return;
     }
 
     let limit = 1;
-    if (sub?.subscription.includes('BASIC')) {
+    if (user.subName.includes('BASIC')) {
       limit = 20;
     }
 
@@ -371,11 +371,11 @@ export default function DashboardPage() {
     <main className="grow bg-cyan-50">
       <div className={`pt-36 md:pt-28 pb-10 px-10 ${showArticleForm ? 'hidden' : ''}`}>
         <div className="flex flex-col md:flex-row items-center justify-between">
-          <h2 className="text-2xl mt-3 md:mt-0 py-2 capitalize px-4 text-white bg-gradient-to-r from-indigo-500 from-10%  via-sky-500 via-30% to-teal-300 rounded-3xl w-fit">
+          <h2 className="text-2xl mt-3 md:mt-0 py-2 capitalize px-4 text-black bg-gradient-to-r from-indigo-200 from-10%  via-sky-200 via-30% to-teal-200 rounded-2xl w-fit">
             Hello, {`${user.firstname || ''} `}
           </h2>
           <div className="capitalize text-navy text-lg py-2">
-            Subscription: {sub?.subscription} {sub?.renewal && `(vence: ${moment(sub.renewal).format('DD-MM-YYYY')})`}
+            Subscription: {user?.subName ?? 'FREE'} {user.expiryDate && `(vence: ${moment(user.expiryDate).format('DD-MM-YYYY')})`}
           </div>
           <button
             className="flex items-center gap-1 rounded-lg bg-navy hover:bg-cyan-500 text-white p-2 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -393,7 +393,7 @@ export default function DashboardPage() {
             <ArticleList articles={uArts.filter((x: any) => x.approved)} />
           }
           {!uArts.find((x: any) => x.approved) &&
-            <p className="text-lg py-8 text-gray-500 text-center">No published files yet. Click on upload document to start.</p>
+            <p className="text-lg py-8 text-gray-500 text-center">No published articles yet. Click on upload document to start.</p>
           }
         </div>
         <div>
@@ -403,7 +403,7 @@ export default function DashboardPage() {
             <ArticleList articles={uArts.filter((x: any) => !x.approved)} />
           }
           {!uArts.find((x: any) => !x.approved) &&
-            <p className="text-lg py-8 text-gray-500 text-center">No files pending approval.</p>
+            <p className="text-lg py-8 text-gray-500 text-center">No articles pending approval.</p>
           }
         </div>
       </div>

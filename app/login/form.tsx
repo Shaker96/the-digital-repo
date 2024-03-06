@@ -41,7 +41,7 @@ export default function Form() {
   return (
     <main className="grow flex flex-col items-center justify-center pt-28 pb-10 px-10 bg-gradient-to-r from-cyan-300 to-purple-300">
       <div className="flex flex-col items-center justify-center w-2/5 shadow-lg rounded-lg p-5 bg-white">
-        <h1 className="text-2xl font-bold my-3 bg-gradient-to-r from-cyan-300 to-purple-300 px-4 py-2 text-white rounded-2xl">Welcome back!</h1>
+        <h1 className="text-2xl font-bold my-3 px-4 py-2 text-black rounded-2xl">Welcome back!</h1>
         {/* <Image
           className=""
           src={''}

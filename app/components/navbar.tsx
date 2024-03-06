@@ -8,13 +8,13 @@ import Image from 'next/image'
 export default function Navbar({ session }: any) {
   const pathname = usePathname();
 
-  // console.log('Navbar', session);
+  console.log('Navbar', session);
 
   return (
     <nav className={`fixed w-full flex flex-col md:flex-row items-center justify-between md:h-20 px-10 py-5 md:py-0 gap-2 bg-navy z-10 ${['/login', '/register'].includes(pathname) ? '' : '' }`}>
       <Link href="/" className="text-xl font-semibold">
         {/* <Image src={'/logo-nav.png'} alt="" width={260} height={120}/> */}
-        <h1>The Digital Repo</h1>
+        <h1 className='text-white'>The Digital Repo</h1>
       </Link>
       {!!session && 
         <div className="flex items-center">

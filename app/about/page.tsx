@@ -8,16 +8,16 @@ export default function UsPage() {
   const [data, setData] = useState<any | []>([
     {
       title: 'About Us',
-      value: '',
+      value: 'Welcome to our online repository for academic documents in the field of artificial intelligence! This platform has been meticulously developed by Shaker Chabarekh as part of his portfolio as a passionate and dedicated software engineer.',
     },
     {
       title: 'Mission',
-      value: '',
+      value: 'To facilitate the advancement of knowledge and innovation in the field of artificial intelligence by providing a comprehensive and accessible online repository for academic documents, fostering collaboration, learning, and research worldwide.',
       visible: false
     },
     {
       title: 'Vision',
-      value: '',
+      value: 'We envision a world where access to cutting-edge research and scholarly resources in artificial intelligence is effortless and universal. Through our online repository, we aim to empower researchers, students, and professionals to explore, discover, and contribute to the forefront of AI knowledge, driving progress and innovation in this dynamic field.',
       visible: false
     }
   ]);
@@ -36,7 +36,7 @@ export default function UsPage() {
   }
 
   return (
-    <main className="pt-28 pb-20 px-10 grow bg-cyan-50">
+    <main className="pt-40 md:pt-28 pb-10 md:pb-20 px-10 grow bg-cyan-50">
       <div className="flex flex-col h-full">
         <h1 className="text-2xl font-semibold mb-6 py-2 px-4 text-white bg-gradient-to-r from-indigo-500 from-10%  via-sky-500 via-30% to-teal-300 rounded-3xl w-fit">About Us</h1>
         <p className="pb-8 text-xl text-justify">&emsp;&emsp;{data[0].value}</p>
@@ -76,7 +76,7 @@ export default function UsPage() {
             </div>
           </div>
         </div>
-        <div className="my-2 border border-navy rounded-3xl">
+        {/* <div className="my-2 border border-navy rounded-3xl">
           <Link
             className={`flex items-center justify-between w-full p-5 text-2xl border border-gray-200 gap-3 rounded-3xl bg-gradient-to-r from-indigo-500 from-10%  via-sky-500 via-30% to-teal-300 text-white`}
             href="/manual"
@@ -85,7 +85,7 @@ export default function UsPage() {
             <span className="">User manual</span>
             <span className="text-xl pl-1"><MdOutlineFileDownload  /></span>
           </Link>
-        </div>
+        </div> */}
       </div>
     </main>
   )

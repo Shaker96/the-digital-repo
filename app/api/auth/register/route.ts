@@ -11,8 +11,8 @@ export async function POST(request: Request) {
     const hashedPass = await hash(password, 10);
 
     const response = await sql`
-      INSERT INTO users (email, password, firstname, lastname, subscription, downloads)
-      VALUES (${email}, ${hashedPass}, ${firstname}, ${lastname}, 'GRATIS', '0')
+      INSERT INTO users (email, password, firstname, lastname)
+      VALUES (${email}, ${hashedPass}, ${firstname}, ${lastname})
     `;
 
     return NextResponse.json({ message: 'success'});

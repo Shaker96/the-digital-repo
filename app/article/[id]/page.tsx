@@ -21,25 +21,9 @@ export default function Article({ params }: any) {
   useEffect(() => {
     (async () => {
       // console.log('SESSION', session);
-
-      const getresponse = await fetch(`/api/userdownload?id=${user.id}`, {
-        method: 'GET',
-      });
+      console.log('USER', user);
   
-      const info = (await getresponse.json())?.info
-  
-      // console.log('USER', info);
-  
-      if (info.subscription.includes('PREMIUM')) {
-        return;
-      }
-  
-      let dlimit = 2;
-      if (info.subscription.includes('BASICO') ) {
-        dlimit = 50;
-      }
-  
-      if (info.downloads >= dlimit) {
+      if (!user || user.downloads >= user.totalDownloads) {
         setCanDownload(false);
       }
     })()
@@ -57,7 +41,7 @@ export default function Article({ params }: any) {
 
   return (
     <div className="pt-20 full-pdf pdf-article">
-      {showModal && <Modal setShowModal={setShowModal} userId={user.id}/>}
+      {showModal && <Modal setShowModal={setShowModal} userId={user?.id}/>}
       <PdfViewer 
         PDF={url + params.id} 
         pageNumber={1} 
@@ -65,6 +49,7 @@ export default function Article({ params }: any) {
         canDownload={canDownload} 
         setShowModal={setShowModal}
         increaseDownloads={increaseDownloads}
+        userId={user?.id}
       ></PdfViewer>
     </div>
   )
