@@ -49,7 +49,7 @@ export default function ArticleList({ articles, title, isHome }: any) {
           <p
             key={i + 1}
             data-id={i + 1}
-            className={`flex items-center justify-center py-1 w-9 border-navy ${page == (i + 1) ? 'bg-navy text-white' : 'border text-navy'} rounded-lg cursor-pointer`}
+            className={`flex items-center justify-center py-1 w-9 border-navy ${page == (i + 1) ? 'bg-primary text-white' : 'border text-navy'} rounded-lg cursor-pointer`}
             onClick={changePage}
           >
             {i + 1}

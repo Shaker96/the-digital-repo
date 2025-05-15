@@ -76,7 +76,7 @@ export default function Form() {
           </div>
           <button
             type="submit"
-            className={`flex items-center text-lg justify-center gap-x-3 px-4 py-2 mt-5 h-12 text-white bg-navy transition-colors rounded-lg disabled:opacity-50 disabled:cursor-not-allowed`}
+            className={`flex items-center text-lg justify-center gap-x-3 px-4 py-2 mt-5 h-12 text-white bg-primary transition-colors rounded-lg disabled:opacity-50 disabled:cursor-not-allowed`}
             disabled={disableBtn}
           >
             Log In

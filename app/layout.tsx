@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import localFont from 'next/font/local'
+import { Quicksand } from 'next/font/google'
 import { getServerSession } from 'next-auth';
 import { authOptions } from './api/auth/[...nextauth]/route';
 import Navbar from './components/navbar'
@@ -9,8 +8,7 @@ import Provider from "@/app/context/client-provider";
 import Footer from './components/footer';
 import { getStats } from './lib/sanity';
 
-const inter = Inter({ subsets: ['latin'] })
-const myFont = localFont({ src: '../public/fonts/Geomatrix.otf' })
+const quicksand = Quicksand({ subsets: ['latin'], weight: ['400', '700'] })
 
 export const metadata: Metadata = {
   title: 'The Digital Repo',
@@ -23,7 +21,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
 
   return (
     <html lang="en">
-      <body className={myFont.className}>
+      <body className={quicksand.className}>
         <Navbar session={session}/>
         <Provider session={session}>
           {children}

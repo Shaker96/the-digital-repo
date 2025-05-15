@@ -371,14 +371,14 @@ export default function DashboardPage() {
     <main className="grow bg-cyan-50">
       <div className={`pt-36 md:pt-28 pb-10 px-10 ${showArticleForm ? 'hidden' : ''}`}>
         <div className="flex flex-col md:flex-row items-center justify-between">
-          <h2 className="text-2xl mt-3 md:mt-0 py-2 capitalize px-4 text-black bg-gradient-to-r from-indigo-200 from-10%  via-sky-200 via-30% to-teal-200 rounded-2xl w-fit">
+          <h2 className="text-2xl mt-3 md:mt-0 py-2 capitalize text-black w-fit font-bold">
             Hello, {`${user.firstname || ''} `}
           </h2>
           <div className="capitalize text-navy text-lg py-2">
             Subscription: {user?.subName ?? 'FREE'} {user.expiryDate && `(vence: ${moment(user.expiryDate).format('DD-MM-YYYY')})`}
           </div>
           <button
-            className="flex items-center gap-1 rounded-lg bg-navy hover:bg-cyan-500 text-white p-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-1 rounded-lg bg-primary hover:bg-cyan-500 text-white p-2 disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={handleUploadButton}
             disabled={loadingSubs}
           >

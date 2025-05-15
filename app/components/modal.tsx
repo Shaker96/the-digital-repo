@@ -58,12 +58,12 @@ export default function Modal({ setShowModal, userId }: { setShowModal: Dispatch
           <>
             <span className="absolute top-3 right-3 text-2xl cursor-pointer" onClick={() => setShowModal(false)}><MdClose /></span>
             <div className="flex grow gap-7 justify-center">
-              <span className={`text-center my-2 block rounded-lg shadow-lg px-7 pt-4 pb-3.5 text-md uppercase leading-tight cursor-pointer w-1/5 ${plan == 1 ? 'bg-navy text-white' : 'bg-white text-navy hover:bg-navy hover:text-white'}`} onClick={() => setPlan(1)}>Monthly</span>
-              <span className={`text-center my-2 block rounded-lg shadow-lg px-7 pt-4 pb-3.5 text-md uppercase leading-tight cursor-pointer w-1/5 ${plan == 2 ? 'bg-navy text-white' : 'bg-white text-navy hover:bg-navy hover:text-white'}`} onClick={() => setPlan(2)}>Annual</span>
+              <span className={`text-center my-2 block rounded-lg shadow-lg px-7 pt-4 pb-3.5 text-md uppercase leading-tight cursor-pointer w-1/5 ${plan == 1 ? 'bg-primary text-white' : 'bg-white text-navy hover:bg-primary hover:text-white'}`} onClick={() => setPlan(1)}>Monthly</span>
+              <span className={`text-center my-2 block rounded-lg shadow-lg px-7 pt-4 pb-3.5 text-md uppercase leading-tight cursor-pointer w-1/5 ${plan == 2 ? 'bg-primary text-white' : 'bg-white text-navy hover:bg-primary hover:text-white'}`} onClick={() => setPlan(2)}>Annual</span>
             </div>
             <div className="flex gap-7 w-full items-center justify-center h-3/4">
               <div className="flex flex-col h-full p-5 grow max-w-[35%] bg-white rounded-lg shadow-lg">
-                <h2 className="text-3xl text-center -m-5 p-5 mb-5 bg-navy text-white rounded-lg">Basic</h2>
+                <h2 className="text-3xl text-center -m-5 p-5 mb-5 bg-primary text-white rounded-lg">Basic</h2>
                 <div className="flex items-center justify-center rounded-lg h-16 text-navy text-4xl">
                   ${plan == 1 ? subscriptions[0].price : subscriptions[1].price}
                 </div>
@@ -75,13 +75,13 @@ export default function Modal({ setShowModal, userId }: { setShowModal: Dispatch
                   )}
                 </div>
                 <button
-                  className="text-3xl text-center -m-5 p-5 mt-5 bg-navy text-white rounded-lg hover:opacity-90 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="text-3xl text-center -m-5 p-5 mt-5 bg-primary text-white rounded-lg hover:opacity-90 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                   onClick={() => subscribe('BASIC')}
                   disabled={disableBtn}
                 >Subscribe</button>
               </div>
               <div className="flex flex-col h-full p-5 grow max-w-[35%] bg-white rounded-lg shadow-lg">
-                <h2 className="text-3xl text-center -m-5 p-5 mb-5 bg-navy text-white rounded-lg">Premium</h2>
+                <h2 className="text-3xl text-center -m-5 p-5 mb-5 bg-primary text-white rounded-lg">Premium</h2>
                 <div className="flex items-center justify-center rounded-lg h-16 text-navy text-4xl">
                   ${plan == 1 ? subscriptions[2].price : subscriptions[3].price}
                 </div>
@@ -93,7 +93,7 @@ export default function Modal({ setShowModal, userId }: { setShowModal: Dispatch
                   )}
                 </div>
                 <button
-                  className="text-3xl text-center -m-5 p-5 mt-5 bg-navy text-white rounded-lg hover:opacity-90 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="text-3xl text-center -m-5 p-5 mt-5 bg-primary text-white rounded-lg hover:opacity-90 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                   onClick={() => subscribe('PREMIUM')}
                   disabled={disableBtn}
                 >Subscribe</button>
@@ -111,7 +111,7 @@ export default function Modal({ setShowModal, userId }: { setShowModal: Dispatch
             </div>
             <div className="flex gap-7 w-full items-center justify-center h-3/4">
               <div className="flex flex-col h-full p-5 grow max-w-[35%] bg-white rounded-lg shadow-lg">
-                <h2 className="text-3xl text-center -m-5 p-5 mb-5 bg-navy text-white rounded-lg">You are now subscribed! {thx}</h2>
+                <h2 className="text-3xl text-center -m-5 p-5 mb-5 bg-primary text-white rounded-lg">You are now subscribed! {thx}</h2>
                 <div className="mx-auto">
                   {/* <Image
                     className="relative"

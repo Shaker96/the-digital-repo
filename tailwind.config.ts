@@ -20,7 +20,13 @@ const config: Config = {
         sea: '#44CCDF',
         blueYonder: '#4A7EA6',
         independence: '#434867',
-        navy: '#303682'
+        navy: '#303682',
+        primary: '#1E293B',
+        secondary: '#3B82F6',
+        accent: '#F97316',
+        text: '#F8FAFC',
+        textSecondary: '#64748B',
+        lightGray: '#E2E8F0',
       }
     },
   },

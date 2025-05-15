@@ -45,7 +45,7 @@ export default function PdfViewer({ PDF, singlePage, height, width, canDownload,
           </div>
           {userId && canDownload &&
             <a
-              className="flex items-center gap-1 rounded-lg bg-navy hover:bg-cyan-500 text-white p-2 cursor-pointer"
+              className="flex items-center gap-1 rounded-lg bg-primary hover:bg-cyan-500 text-white p-2 cursor-pointer"
               download href={PDF} target="_blank" onClick={() => increaseDownloads?.()}
             >
               <span className="text-xl pl-1"><MdOutlineFileDownload /></span>
@@ -53,7 +53,7 @@ export default function PdfViewer({ PDF, singlePage, height, width, canDownload,
             </a>}
           {userId && !canDownload &&
             <button
-              className="flex items-center gap-1 rounded-lg bg-navy text-white p-2"
+              className="flex items-center gap-1 rounded-lg bg-primary text-white p-2"
               onClick={() => setShowModal(true)}
             >
               <span className="text-xl pl-1"><MdOutlineFileDownload /></span>
@@ -62,7 +62,7 @@ export default function PdfViewer({ PDF, singlePage, height, width, canDownload,
           {!userId &&
             <Link
               href="/register"
-              className="flex items-center gap-1 rounded-lg bg-navy text-white p-2"
+              className="flex items-center gap-1 rounded-lg bg-primary text-white p-2"
             >
               <span className="text-xl pl-1"><MdOutlineFileDownload /></span>
               <span className="px-2">Create free account to download</span>

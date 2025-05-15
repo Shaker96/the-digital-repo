@@ -138,7 +138,7 @@ export default function Home() {
       <div className={`relative flex items-center justify-between bg-search-cover bg-cover w-full p-10 ${showSearch ? 'h-28' : 'h-auto'}`}>
         <div className={`flex flex-col md:w-1/2 ${showSearch ? 'mx-auto' : ''}`}>
           {!showSearch && <h1 className='text-white text-3xl'>Open knowledge. Bright Future.</h1>}
-          {!showSearch && <p className='text-white pt-6 text-md text-justify'>Welcome to The Digital Repo, built to inform you about state of the art technology. Built using NextJS, tailwind CSS & Sanity, hosted on Vercel.</p>}
+          {!showSearch && <p className='text-white pt-6 text-lg text-justify'>Welcome to <b>The Digital Repo</b>, built to inform you about state of the art technology. Built using NextJS, tailwind CSS. Articles stored in Sanity. Hosted on Vercel.</p>}
           <div className={`flex flex-row items-center justify-between rounded-full border border-navy overflow-hidden w-full bg-white ${showSearch ? '' : 'mt-4'}`}>
             <input
               type="search" placeholder="Search The Digital Repo..."

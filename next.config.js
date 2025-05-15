@@ -1,15 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   images: {
-    domains: ["cdn.sanity.io"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+      },
+    ],
   },
   experimental: {
     appDir: true,
   },
-  future: { webpack5: true },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-      config.resolve.alias.canvas = false
-      config.resolve.alias.encoding = false
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        canvas: false,
+        encoding: false,
+      };
       return config
   }
 }
